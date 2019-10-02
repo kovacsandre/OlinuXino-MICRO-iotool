@@ -1,0 +1,12 @@
+[Unit]
+Description=iotool server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/iotool -d
+Restart=on-failure
+# StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
